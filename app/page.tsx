@@ -1071,28 +1071,6 @@ export default function Home() {
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white resize-none"
                     />
                   </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      {['券', '赠品', '积分', '晒单分享奖励'].map((benefit) => (
-                        <button
-                          key={benefit}
-                          type="button"
-                          onClick={() => {
-                            const newBenefits = selectedTask.benefits.includes(benefit)
-                              ? selectedTask.benefits.filter(b => b !== benefit)
-                              : [...selectedTask.benefits, benefit]
-                            handleTaskUpdate('benefits', newBenefits)
-                          }}
-                          className={`px-4 py-2 rounded-lg border transition-all text-sm ${
-                            selectedTask.benefits.includes(benefit)
-                              ? 'border-blue-500 bg-blue-50 text-blue-700 font-medium'
-                              : 'border-gray-200 hover:border-gray-300 text-gray-700'
-                          }`}
-                        >
-                          {benefit}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
                   {/* 底部操作按钮 - 固定在工作台内部底部 */}
                   <div className="sticky bottom-0 bg-white pt-3 pb-2 border-t border-gray-200 mt-3 -mx-4 px-4">
                     <div className="flex flex-col gap-2">
@@ -1290,8 +1268,8 @@ export default function Home() {
         </div>
       )}
 
-      {/* 右下角 Demo 水印（低对比、半透明浅蓝灰） */}
-      <div className="fixed right-0 bottom-0 bg-slate-200/60 backdrop-blur-sm text-slate-600 px-3 py-2 rounded-tl-lg shadow-sm flex items-center gap-2 text-xs z-50">
+      {/* 右下角联系作者（藏蓝色透黑，有透明度） */}
+      <div className="fixed right-0 bottom-0 bg-slate-800/80 backdrop-blur-sm text-white px-3 py-2 rounded-tl-lg shadow-md flex items-center gap-2 text-xs z-50">
         <span>联系作者</span>
         <span>·</span>
         <span>myrawzm0406@163.com</span>

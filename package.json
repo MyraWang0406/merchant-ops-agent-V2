@@ -6,6 +6,7 @@
     "dev": "next dev -p 3000",
     "dev:clean": "node -e \"require('child_process').exec('netstat -ano | findstr :3000', (e,o) => { if(o) { const pid = o.split(/\\s+/).pop(); if(pid) require('child_process').exec(`taskkill /F /PID ${pid}`, () => {}); } });\" && timeout /t 1 /nobreak >nul && next dev -p 3000",
     "build": "next build",
+    "export": "next build",
     "start": "next start",
     "lint": "next lint"
   },
