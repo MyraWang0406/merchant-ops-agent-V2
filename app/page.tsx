@@ -401,7 +401,8 @@ export default function Home() {
       copyTitle,
       copyContent,
       benefits: [...benefits],
-      status: 'generated',
+      status: 'pending',
+      isManuallyEdited: false,
       createdAt: new Date().toLocaleString('zh-CN')
     }
 
@@ -1092,8 +1093,6 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-
-                  </div>
                   {/* 底部操作按钮 - 固定在工作台内部底部 */}
                   <div className="sticky bottom-0 bg-white pt-3 pb-2 border-t border-gray-200 mt-3 -mx-4 px-4">
                     <div className="flex flex-col gap-2">
@@ -1140,10 +1139,10 @@ export default function Home() {
               )}
             </div>
             </div>
-              {/* 页面底部说明文字 */}
-              <div className="flex-shrink-0 mt-2 pt-3 border-t border-gray-200">
-                <p className="text-xs text-gray-400 text-center">数据来源：阿里天池开源数据集（UserBehavior），仅用于展示 Agent 决策流程与交互方式。</p>
-              </div>
+            {/* 页面底部说明文字 */}
+            <div className="flex-shrink-0 mt-2 pt-3 border-t border-gray-200">
+              <p className="text-xs text-gray-400 text-center">数据来源：阿里天池开源数据集（UserBehavior），仅用于展示 Agent 决策流程与交互方式。</p>
+            </div>
             </div>
           )}
         </div>
@@ -1269,7 +1268,7 @@ export default function Home() {
                     <span className="font-medium">已导入：{importedFileName}</span>
                   </div>
                   <p className="text-sm text-green-700 mt-2">
-                    表头字段：{importedHeaders.join(', ')}
+                    表头字段：{importedHeaders?.join(', ') || ''}
                   </p>
                 </div>
               )}
