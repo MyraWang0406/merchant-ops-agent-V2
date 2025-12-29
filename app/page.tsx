@@ -1071,6 +1071,7 @@ export default function Home() {
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white resize-none"
                     />
                   </div>
+                  </div>
                   {/* 底部操作按钮 - 固定在工作台内部底部 */}
                   <div className="sticky bottom-0 bg-white pt-3 pb-2 border-t border-gray-200 mt-3 -mx-4 px-4">
                     <div className="flex flex-col gap-2">
